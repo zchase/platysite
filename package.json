@@ -1,0 +1,29 @@
+{
+  "name": "platysite",
+  "version": "0.0.1",
+  "description": "A CLI for quickly deploying static websites to AWS, Azure, and Google Cloud.",
+  "main": "bin/index.js",
+  "types": "bin/index.d.ts",
+  "scripts": {
+    "build": "tsc"
+  },
+  "keywords": [ "static website", "aws", "azure", "google cloud", "gcp", "website", "deploy" ],
+  "author": "Zack Chase",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/node": "^18.8.4",
+    "@types/string-width": "^4.0.1",
+    "@types/yargs": "^17.0.13",
+    "ts-node": "^10.9.1",
+    "typescript": "^4.8.4"
+  },
+  "dependencies": {
+    "@pulumi/aws": "^5.16.2",
+    "@pulumi/aws-static-website": "^0.2.0",
+    "@pulumi/azure-static-website": "^0.0.5",
+    "@pulumi/google-cloud-static-website": "^0.0.3",
+    "@pulumi/pulumi": "^3.42.0",
+    "string-width": "4.2.3",
+    "yargs": "^17.6.0"
+  }
+}
