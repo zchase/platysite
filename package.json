@@ -5,7 +5,8 @@
   "main": "bin/index.js",
   "types": "bin/index.d.ts",
   "scripts": {
-    "build": "tsc"
+    "build": "tsc",
+    "platysite": "node ./bin/index.js"
   },
   "keywords": [
     "static website",
