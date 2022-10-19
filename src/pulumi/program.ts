@@ -59,7 +59,6 @@ async function createStaticWebsiteProgram<T extends config.Cloud>(args: StaticWe
             break;
         case "google":
             //await stack.workspace.installPlugin("google-static-website", "v0.0.3");
-            await stack.setConfig("gcp:zone", { value: args.region });
             await stack.setConfig("gcp:project", { value: args.googleCloudProjectId });
             break;
         default:
