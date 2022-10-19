@@ -1,3 +1,5 @@
+#!/usr/bin/env node
+
 import CLI from "./src/cli/command";
 import * as commands from "./src/cli";
 
