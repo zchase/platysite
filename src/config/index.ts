@@ -25,7 +25,8 @@ export interface StackConfig<C extends Cloud = any> {
     cloud: C;
     region: C extends AwsCloud ? awsRegion : string;
     sitePath: string;
-    args: WebsiteArgs<C>,
+    args: WebsiteArgs<C>;
+    googleCloudProjectId: string;
 }
 
 export class Config<C extends Cloud> {
@@ -34,6 +35,7 @@ export class Config<C extends Cloud> {
     public cloud: C;
     public region: C extends AwsCloud ? awsRegion : string;
     public sitePath: string;
+    public googleCloudProjectId: string;
     public args: WebsiteArgs<C>;
 
     constructor(
@@ -44,6 +46,7 @@ export class Config<C extends Cloud> {
         this.cloud = args.cloud;
         this.region = args.region;
         this.sitePath = args.sitePath;
+        this.googleCloudProjectId = args.googleCloudProjectId;
         this.args = args.args;
     }
 
@@ -58,6 +61,7 @@ export class Config<C extends Cloud> {
             cloud: this.cloud,
             region: this.region,
             sitePath: this.sitePath,
+            googleCloudProjectId: this.googleCloudProjectId,
             args: this.args,
         };
 

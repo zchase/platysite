@@ -60,9 +60,10 @@ async function createStaticWebsiteProgram<T extends config.Cloud>(args: StaticWe
         case "google":
             //await stack.workspace.installPlugin("google-static-website", "v0.0.3");
             await stack.setConfig("gcp:zone", { value: args.region });
+            await stack.setConfig("gcp:project", { value: args.googleCloudProjectId });
             break;
         default:
-            throw new Error(`unknown cloud provided [${args.cloud}]`);
+            throw new Error(`unsupported cloud provided [${args.cloud}]`);
     }
 
     return stack;
@@ -82,7 +83,7 @@ function createStaticWebsiteInfra<T extends config.Cloud>(args: StaticWebsiteArg
                 url = createGoogleInfra(args as StaticWebsiteArgs<"google">);
                 break;
             default:
-                throw new Error(`unknown cloud provided [${args.cloud}]`);
+                throw new Error(`unsupported cloud provided [${args.cloud}]`);
         }
 
         return { url };

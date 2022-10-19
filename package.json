@@ -7,7 +7,15 @@
   "scripts": {
     "build": "tsc"
   },
-  "keywords": [ "static website", "aws", "azure", "google cloud", "gcp", "website", "deploy" ],
+  "keywords": [
+    "static website",
+    "aws",
+    "azure",
+    "google cloud",
+    "gcp",
+    "website",
+    "deploy"
+  ],
   "author": "Zack Chase",
   "license": "ISC",
   "devDependencies": {
@@ -18,6 +26,7 @@
     "typescript": "^4.8.4"
   },
   "dependencies": {
+    "@aws-sdk/client-sts": "^3.188.0",
     "@pulumi/aws": "^5.16.2",
     "@pulumi/aws-static-website": "^0.2.0",
     "@pulumi/azure-static-website": "^0.0.5",

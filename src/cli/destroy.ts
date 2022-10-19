@@ -1,6 +1,6 @@
 import { Command } from "./command";
 import * as config from "../config";
-import { destroy } from "../pulumi";
+import { destroy, validateCreds } from "../pulumi";
 import { PulumiAction } from "../tui/pulumiAction";
 
 interface DestroyArgs {
@@ -26,6 +26,11 @@ class Destroy implements Command<DestroyArgs> {
             stackConfigArgs = config.readConfig(args.environment);
         } catch (e) {
             throw new Error(`no config found for environment [${args.environment}]`);
+        }
+
+        const validPulumiCreds = validateCreds();
+        if (!validPulumiCreds) {
+            throw new Error("no valid Pulumi backend found, please run `pulumi login`");
         }
 
         view.updateMessage("destroying website");
